@@ -7,7 +7,6 @@ package codigo;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
 /**
@@ -34,7 +33,10 @@ public class Cuadrado extends Rectangle2D.Double{
         
     }
     
-    public void dibujate( Graphics2D g2){
+    public void dibujate( Graphics2D g2, int posX){
+        int lado = Math.abs ((int)this.x - posX);
+              this.width = lado;
+              this.height = lado;
         g2.setColor(color);
         if (relleno){
             g2.fill(this);        
